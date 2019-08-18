@@ -7266,11 +7266,11 @@ group {
                state: "default" 0.0;
                rel1 {
                   relative: 0.0 0.0;
-                  offset: 3 3;
+                  offset: 0 2;
                }
                rel2 {
                   relative: 1.0 1.0;
-                  offset: -4 -4;
+                  offset: -1 -2;
                }
             }
          }
@@ -7488,6 +7488,7 @@ group {
       parts {
          part {
             name: "clip";
+             mouse_events: 0;
             type: RECT;
             description {
                state: "default" 0.0;
@@ -7658,11 +7659,11 @@ group {
                state: "default" 0.0;
                rel1 {
                   relative: 0.0 0.0;
-                  offset: 3 3;
+                  offset: 0 2;
                }
                rel2 {
                   relative: 1.0 1.0;
-                  offset: -4 -4;
+                  offset: -1 -2;
                }
             }
          }
@@ -7784,16 +7785,17 @@ group {
 	 }
 	 part { name: "e.swallow.content";
 	    type: SWALLOW;
-	    description { state: "default" 0.0;
-	       rel1 {
-		  relative: 0.0 0.0;
-		  offset: 3 3;
-	       }
-	       rel2 {
-		  relative: 1.0 1.0;
-		  offset: -4 -4;
-	       }
-	    }
+	    description {
+               state: "default" 0.0;
+               rel1 {
+                  relative: 0.0 0.0;
+                  offset: 0 2;
+               }
+               rel2 {
+                  relative: 1.0 1.0;
+                  offset: -1 -2;
+               }
+            }
 	 }
 	 part { name: "over";
 	    mouse_events: 0;
@@ -7929,6 +7931,7 @@ group {
       parts {
          part {
             name: "clip";
+             mouse_events: 0;
             type: RECT;
             description {
                state: "default" 0.0;
@@ -14799,13 +14802,13 @@ target: "e.swallow.content";
          program {
 signal: "e,toolbar,left"; source: "e";
 action: STATE_SET "tb_left" 0.0;
-target: "e.swallow.toolbar";
+//~ target: "e.swallow.toolbar";
 target: "region";
                }
          program {
 signal: "e,toolbar,right"; source: "e";
 action: STATE_SET "tb_right" 0.0;
-target: "e.swallow.toolbar";
+//~ target: "e.swallow.toolbar";
 target: "region";
                }
          program {
@@ -23246,6 +23249,12 @@ target: "region";
                inherit: "default" 0.0;
                color_class: "button_text_disabled";
             }
+            description { state: "combo" 0.0;
+               inherit: "default" 0.0;
+               rel1.relative: 1.0 0.0;
+               rel1.offset: 2 5;
+               rel1.to_x: "e.swallow.icon";
+         }
             description {
                state: "icon" 0.0;
                inherit: "default" 0.0;
@@ -24888,7 +24897,7 @@ target: "region";
             target: "bg";
             target: "fg1";
             target: "fg2";
-            target: "e.text.label";
+            //~ target: "e.text.label";
          }
          program {
             name: "go_passive";
@@ -25068,7 +25077,7 @@ target: "region";
             target: "bg";
             target: "fg1";
             target: "fg2";
-            target: "e.text.label";
+            //~ target: "e.text.label";
          }
          program {
             name: "go_passive";
@@ -27706,13 +27715,13 @@ target: "region";
             source: "overlay";
             action: SIGNAL_EMIT "e,action,move,go" "";
          }
-         program {
-            name: "h1_down1";
-            signal: "mouse,down,1";
-            source: "h1";
-            action: STATE_SET "clicked" 0.0;
-            target: "h1";
-         }
+         //~ program {
+            //~ name: "h1_down1";
+            //~ signal: "mouse,down,1";
+            //~ source: "h1";
+            //~ action: STATE_SET "clicked" 0.0;
+            //~ target: "h1";
+         //~ }
          program {
             name: "h1_up1";
             signal: "mouse,up,1";
@@ -27738,13 +27747,13 @@ target: "region";
             source: "h1";
             action: SIGNAL_EMIT "e,action,resize,left,go" "";
          }
-         program {
-            name: "h2_down1";
-            signal: "mouse,down,1";
-            source: "h2";
-            action: STATE_SET "clicked" 0.0;
-            target: "h2";
-         }
+         //~ program {
+            //~ name: "h2_down1";
+            //~ signal: "mouse,down,1";
+            //~ source: "h2";
+            //~ action: STATE_SET "clicked" 0.0;
+            //~ target: "h2";
+         //~ }
          program {
             name: "h2_up1";
             signal: "mouse,up,1";
@@ -27770,13 +27779,13 @@ target: "region";
             source: "h2";
             action: SIGNAL_EMIT "e,action,resize,right,go" "";
          }
-         program {
-            name: "v1_down1";
-            signal: "mouse,down,1";
-            source: "v1";
-            action: STATE_SET "clicked" 0.0;
-            target: "v1";
-         }
+         //~ program {
+            //~ name: "v1_down1";
+            //~ signal: "mouse,down,1";
+            //~ source: "v1";
+            //~ action: STATE_SET "clicked" 0.0;
+            //~ target: "v1";
+         //~ }
          program {
             name: "v1_up1";
             signal: "mouse,up,1";
@@ -27802,13 +27811,13 @@ target: "region";
             source: "v1";
             action: SIGNAL_EMIT "e,action,resize,up,go" "";
          }
-         program {
-            name: "v2_down1";
-            signal: "mouse,down,1";
-            source: "v2";
-            action: STATE_SET "clicked" 0.0;
-            target: "v2";
-         }
+         //~ program {
+            //~ name: "v2_down1";
+            //~ signal: "mouse,down,1";
+            //~ source: "v2";
+            //~ action: STATE_SET "clicked" 0.0;
+            //~ target: "v2";
+         //~ }
          program {
             name: "v2_up1";
             signal: "mouse,up,1";
@@ -31644,8 +31653,8 @@ target: "region";
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
@@ -31925,8 +31934,8 @@ target: "region";
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             target: "theme";
             after: "thumb_gen2";
@@ -32138,8 +32147,8 @@ target: "region";
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
@@ -33010,13 +33019,13 @@ target: "region";
             target: "cursor";
             after: "blink_off";
          }
-        program {
-            name: "show_list";
-            signal: "e,state,list_show";
-            source: "e";
-            action: STATE_SET "visible" 0.0;
-            target: "base";
-         }
+        //~ program {
+            //~ name: "show_list";
+            //~ signal: "e,state,list_show";
+            //~ source: "e";
+            //~ action: STATE_SET "visible" 0.0;
+            //~ target: "base";
+         //~ }
          program {
             name: "hide_list";
             signal: "e,state,list_hide";
@@ -33025,13 +33034,13 @@ target: "region";
             transition: ACCELERATE 0.08;
             target: "base";
          }
-         program {
-            name: "show_entry";
-            signal: "e,state,entry_show";
-            source: "e";
-            action: STATE_SET "visible" 0.0;
-            target: "input_base";
-         }
+         //~ program {
+            //~ name: "show_entry";
+            //~ signal: "e,state,entry_show";
+            //~ source: "e";
+            //~ action: STATE_SET "visible" 0.0;
+            //~ target: "input_base";
+         //~ }
          program {
             name: "hide_entry";
             signal: "e,state,entry_hide";
@@ -39211,14 +39220,14 @@ target: "region";
                   action: STATE_SET "default" 0.0;
                   target: "base";
                }
-             program
-               {
-                  name: "disabled";
-                  signal: "e,state,disabled";
-                  source: "e";
-                  action: STATE_SET "disabled" 0.0;
-                  target: "base";
-               }
+             //~ program
+               //~ {
+                  //~ name: "disabled";
+                  //~ signal: "e,state,disabled";
+                  //~ source: "e";
+                  //~ action: STATE_SET "disabled" 0.0;
+                  //~ target: "base";
+               //~ }
           }
      }
 
